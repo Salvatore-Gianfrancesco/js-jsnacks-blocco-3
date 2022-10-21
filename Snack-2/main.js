@@ -5,27 +5,16 @@ const words = [
 ]
 console.log(words);
 
-for (let i = 0; i < words.length; i++) {
-    let newWord = words[i].toLowerCase();
-
-    words[i] = newWord;
-    // console.log(newWord);
-}
-// console.log(words);
-
-const newWords = []
-words.forEach(word => {
-    word = word.split('');
+const newWords = words.map(function (word) {
+    word = word.toLowerCase();
     // console.log(word);
 
-    const letterUpper = word[0].toUpperCase();
-    word[0] = letterUpper
-    // console.log(letterUpper);
-
+    word = word.split('');
+    word[0] = word[0].toUpperCase();
     word = word.join('');
     // console.log(word);
+    // console.log(word[0]);
 
-    newWords.push(word)
+    return word;
 });
-
 console.log(newWords);
