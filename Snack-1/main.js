@@ -48,7 +48,7 @@ const automobili = [
         marca: "Lotus",
         modello: "boh",
         alimentazione: "Elettrico"
-    },
+    }
 ];
 // console.log(automobili);
 
@@ -60,3 +60,39 @@ console.log(autoDiesel);
 
 const autoAltro = automobili.filter(auto => auto.alimentazione !== "Benzina" && auto.alimentazione !== "Diesel");
 console.log(autoAltro);
+
+const ulEl = document.getElementsByClassName("auto");
+console.log(ulEl);
+
+let currentUl = ulEl[0];
+autoBenzina.forEach(function (auto) {
+    const liEl = document.createElement("li");
+
+    const currentAuto = auto.marca + " " + auto.modello;
+    liEl.innerText = currentAuto;
+    // console.log(liEl);
+
+    currentUl.insertAdjacentElement("beforeend", liEl);
+})
+
+currentUl = ulEl[1];
+autoDiesel.forEach(function (auto) {
+    const liEl = document.createElement("li");
+
+    const currentAuto = auto.marca + " " + auto.modello;
+    liEl.innerText = currentAuto;
+    // console.log(liEl);
+
+    currentUl.insertAdjacentElement("beforeend", liEl);
+})
+
+currentUl = ulEl[2];
+autoAltro.forEach(function (auto) {
+    const liEl = document.createElement("li");
+
+    const currentAuto = auto.marca + " " + auto.modello;
+    liEl.innerText = currentAuto;
+    // console.log(liEl);
+
+    currentUl.insertAdjacentElement("beforeend", liEl);
+})
